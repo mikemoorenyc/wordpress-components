@@ -1,0 +1,163 @@
+#map_points_box {
+  .inside {
+    margin: 0;
+    padding:0;
+  }
+}
+.points-component {
+  &.empty-state {
+    height: 250px;
+    background-position: top left;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-color: #747779;
+
+
+    .copy {
+      padding: 40px 0 0 200px;
+      box-sizing: border-box;
+      color:white;
+      text-shadow: 0 0 3px rgba(0,0,0,.4);
+      h1 {
+        color:white;
+      }
+    }
+  }
+  .footer {
+    padding: 2px 12px;
+    text-align: left;
+    //border-top: 1px solid #eee;
+    a[disabled] {
+      opacity: .1;
+      pointer-events: none;
+    }
+  }
+  .pointItem {
+    border-bottom: 1px solid $border-color;
+  }
+}
+.category-block {
+  h2 {
+    border-bottom: 1px solid $border-color;
+    padding-left:30px !important;
+  }
+}
+.point-item {
+  padding:5px 0px 5px 30px;
+  position:relative;
+  background:$light-grey;
+  .title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right:50px;
+  }
+  .drag-handle {
+    width: 50px;
+  }
+  .edit-button {
+    display:none;
+    position:absolute;
+    left: 2px;
+    top: 2px;
+    width: 28px;
+    height:calc(100% - 2px);
+    border:0;
+    padding:0;
+    background:none;
+    cursor: pointer;
+    &[data-hover=true] {
+      display:block;
+    }
+    svg {
+      display:block;
+      width: 12px;
+      height:12px;
+      position:absolute;
+      left: 50%;
+      height:50%;
+      transform:translate(-50%,-50%);
+      * {
+        fill: $black-10;
+      }
+    }
+  }
+}
+.pointItem.currently-editing {
+  background: $light-grey;
+  border: 1px solid $border-color;
+  border-width:1px 0;
+  &:last-child {
+    border-bottom:0;
+  }
+}
+.point-form {
+
+  .point-form-header {
+    padding:10px 12px;
+    > input {
+      float:left;
+      width:calc(50% - 10px;)
+    }
+    > select {
+      float: right;
+      max-width: calc(50% - 10px);
+    }
+  }
+  #map-container {
+    position:relative;
+    width:100%;
+    height:300px;
+    #theMap {
+      position:absolute;
+      left: 0;
+      top: 0;
+      height:100%;
+      width:100%;
+    }
+  }
+  .FormFooter {
+    padding:10px 12px;
+    text-align:right;
+    position:relative;
+    button {
+      margin-left:10px;
+    }
+    a.delete {
+      position:absolute;
+      left: 12px;
+      top:50%;
+      transform: translateY(-50%);
+      text-decoration: none;
+      color: #a00;
+      &:hover {
+        color:red;
+      }
+    }
+  }
+}
+
+
+
+
+#search-holder {
+  background:white;
+  position:absolute;
+  top: 10px;
+  left: 10px;
+  box-shadow: 0 2px 2px rgba(0,0,0,.1);
+  border-radius:5px;
+  width:calc(100% - 20px);
+}
+#search-holder #search-input {
+  display:block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  background:none;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+
+}

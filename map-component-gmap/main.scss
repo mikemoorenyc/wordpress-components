@@ -1,0 +1,16 @@
+$light-grey: #f9f9f9;
+$border-color: #eee;
+$black-10: rgba(0,0,0,.1);
+@import 'sass/spectrum.scss';
+@import 'sass/drag-handle.scss';
+@import 'sass/category-styles.scss';
+@import 'sass/points-styles.scss';
+
+
+.points-component[data-editing="true"] .pointItem:not(.currently-editing), .categories-component[data-editing="true"] .categoryItem:not(.currently-editing) {
+  pointer-events: none;
+  opacity:.25;
+}
+#points-component {
+  //EMPTY STATE
+}

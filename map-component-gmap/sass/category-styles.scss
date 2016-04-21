@@ -1,0 +1,123 @@
+#map_categories_box {
+  .inside {
+    margin: 0;
+    padding:0;
+  }
+
+}
+
+#categories-component{
+
+  .categoryItem {
+    position:relative;
+    padding:8px 12px;
+    background:white;
+    &:nth-child(odd) {
+      background: $light-grey;
+    }
+    .category-item {
+      position:relative;
+      padding-left: 35px;
+      .category-title {
+        line-height:25px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin-right:30px;
+      }
+      .edit-bubble {
+
+        position:absolute;
+        left: 0;
+        top:50%;
+        width:25px;
+        height:25px;
+        border-radius:50%;
+        border: 0;
+        transform:translateY(-50%);
+        cursor: pointer;
+        .icon {
+          display:none;
+          width: 12px;
+          height: 12px;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform:translate(-50%,-50%);
+          &[data-hover=true] {
+            display:block;
+          }
+          svg {
+            display:block;
+            width:100%;
+            height:100%;
+            * {
+              fill: white;
+            }
+          }
+          &.dark {
+            svg * {
+              fill:black;
+            }
+          }
+        }
+      }
+    }
+    &.currently-editing {
+      background:$light-grey;
+      border:1px solid $border-color;
+      border-width:1px 0;
+      &:first-child {
+        border-top:0;
+      }
+      &:last-child {
+        border-bottom:0;
+      }
+    }
+  }
+  .footer {
+    padding:2px 12px;
+    text-align:left;
+    border-top: 1px solid $border-color;
+    > a[disabled] {
+      opacity: .1;
+      pointer-events: none;
+    }
+  }
+}
+
+.category-form {
+  padding:5px 0;
+  .fields {
+    .sp-replacer {
+      float:right;
+    }
+    .input-field:first-child {
+      float:left;
+      width:calc(100% - 65px);
+      input {
+        width:100%;
+      }
+    }
+  }
+  .sub-form-footer {
+    position:relative;
+    margin-top:15px;
+    text-align:right;
+    button {
+      margin-left:5px;
+    }
+    a.deletion {
+      position:absolute;
+      left: 0;
+      bottom: 0;
+    }
+  }
+  .categories-component {
+    &[data-dragging=true] {
+      .drag-handle .icon, .edit-bubble .icon {
+        display:none !important;
+      }
+    }
+  }
+}
