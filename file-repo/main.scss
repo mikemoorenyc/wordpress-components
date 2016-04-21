@@ -1,0 +1,29 @@
+@mixin box-styling {
+  margin: 20px;
+  border:1px solid #efefef;
+  background:white;
+  padding:20px;
+  box-shadow: 0 2px 10px rgba(black,.05);
+  border-radius:3px;
+}
+.box-styler {
+  @include box-styling();
+}
+
+#file_box {
+  background: lighten(#efefef, 4%);
+  h2.hndle, > button.handlediv {
+    display:none;
+  }
+  .inside {
+    margin:0;
+    padding:0;
+
+  }
+}
+#regionsdiv {
+  display:none;
+}
+@import 'sass/file-form.scss';
+@import 'sass/user-list.scss';
+@import 'sass/user-search-form.scss';
